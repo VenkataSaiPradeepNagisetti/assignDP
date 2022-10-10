@@ -1,1 +1,1 @@
-# Design Patterns implementation
+# Five Design Patterns are implemented 
