@@ -3,3 +3,4 @@
 2. Bridge
 3. Factory
 4. Iterator
+5. Visitor
