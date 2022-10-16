@@ -1,6 +1,6 @@
 # Five Design Patterns are implemented 
-1. Facade
-2. Bridge
-3. Factory
-4. Iterator
-5. Visitor
+1. Facade pattern
+2. Bridge pattern
+3. Factory pattern
+4. Iterator pattern
+5. Visitor pattern
