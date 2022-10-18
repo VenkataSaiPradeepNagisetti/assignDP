@@ -1,4 +1,4 @@
-# Five Design Patterns are implemented 
+# Five Design Patterns are implemented.
 1. Facade pattern
 2. Bridge pattern
 3. Factory pattern
