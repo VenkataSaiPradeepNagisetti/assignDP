@@ -1,10 +1,6 @@
 public class Buyer extends Person {
 
-	public void showMenu() {
-		for(Product iterator: productList)
-			if(!(iterator.productList.size() ==0))
-				System.out.println( iterator.productList);
-	}
+	public void showMenu() {}
 
 	/*
 	 * Factory Pattern Implemented  to create product menu
