@@ -1,13 +1,19 @@
 public class ProduceProductMenu implements ProductMenu {
 
 
+    /*
+     * Iterator Pattern Implemented  to show menu
+     * */
     public void showMenu(Facade facade) {
         System.out.println("\n=========================Iterator Pattern==========================\n");
         while (facade.theProductList.getIterator().hasNext()) {
-            String[] split = facade.theProductList.getIterator().next().item.split(":");
-            if (split[0].equals("Produce"))
+            Product nextProduct = facade.theProductList.getIterator().next();
+            String[] split = nextProduct.item.split(":");
+            String p = split[0];
+            if (p.equals("Produce"))
                 System.out.println("Produce Product Items: " + split[1]);
         }
+        facade.theProductList.getIterator().moveToHead();
     }
 
     public void showAddButton() {

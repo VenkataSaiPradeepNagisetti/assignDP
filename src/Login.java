@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Login {
     int userType;
+    String currUser;
     public Login() {
     }
 
@@ -59,6 +60,7 @@ public class Login {
 
         if (users.containsKey(user) && ((String)users.get(user)).equals(pswd)) {
             System.out.println("Successfully logged in");
+            this.currUser = user;
             return true;
         } else {
             System.out.print("Enter valid credentials and try again");

@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class Facade {
 
     private int UserType;
+    String myUser;
 
     private Product theSelectedProduct;
 
-    private int nProductCategory;
+    private int productCategory;
 
     private Person thePerson;
 
@@ -51,17 +52,41 @@ public class Facade {
         return null;
     }
 
+    /*
+     * Console Log Implemented  to show menu
+     * */
     public void productOperation() {
+
         while (true) {
-            System.out.println("Select type of item - 0 : Meat 1 : Produce");
             Scanner scanner = new Scanner(System.in);
-            int typeOfProductSelected = scanner.nextInt();
-            if (typeOfProductSelected > 1 || typeOfProductSelected < 0) {
-                System.out.println("please enter a valid number");
-            } else {
-                nProductCategory = typeOfProductSelected;
-                System.out.println(nProductCategory);
-                thePerson.createProductMenu(nProductCategory).showMenu(this);
+            System.out.println("\nSelect " +
+                    "\n1- View Menu  " +
+                    "\n2- View Trading " +
+                    "\n3- Signout");
+
+            int input = scanner.nextInt();
+            if (input == 1) {
+                System.out.println("\n==========================Factory Pattern======================\n");
+                System.out.println("Select type of item - 0 : Meat 1 : Produce");
+                int typeOfProductSelected = scanner.nextInt();
+                if (typeOfProductSelected > 1 || typeOfProductSelected < 0) {
+                    System.out.println("please enter a valid number");
+                } else {
+                    productCategory = typeOfProductSelected;
+                    System.out.println(productCategory);
+                    thePerson.createProductMenu(productCategory).showMenu(this);
+                }
+            } else if (input == 2) {
+                try {
+                    System.out.println("\n==========================Visitor Pattern======================\n");
+                    Trading trading = new Trading(this);
+                    ReminderVisitor reminderVisitor = new ReminderVisitor();
+                    reminderVisitor.visitTrading(trading, this.myUser);
+                } catch (Exception e) {
+                    System.out.println(e.toString());
+                }
+            } else if (input == 3) {
+                System.exit(1);
             }
         }
     }
@@ -69,6 +94,7 @@ public class Facade {
     public void login() {
         Login cred = new Login();
         if (cred.login()) {
+            System.out.println("\n==========================Bridge Pattern======================\n");
             try {
                 theProductList.initAllProducts("./src/Products.txt");
             } catch (IOException e) {
@@ -79,6 +105,7 @@ public class Facade {
             } else if (cred.userType == 1) {
                 thePerson = new Seller();
             }
+            this.myUser = cred.currUser;
         } else {
             login();
         }

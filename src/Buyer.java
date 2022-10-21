@@ -6,6 +6,10 @@ public class Buyer extends Person {
 				System.out.println( iterator.productList);
 	}
 
+	/*
+	 * Factory Pattern Implemented  to create product menu
+	 * */
+
 	@Override
 	public ProductMenu createProductMenu(int theLevel) {
 		if (theLevel == 0) {
