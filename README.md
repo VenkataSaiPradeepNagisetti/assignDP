@@ -18,4 +18,4 @@ https://github.com/VenkataSaiPradeepNagisetti/assignDP.git
 2. Bridge design pattern is implemented by decoupling the Buyer and Seller from abstract Person. And also MeatProductMenu and ProduceProductMenu is decoupled from interface ProductMenu. Hence the Bridge pattern is implemented.
 3. Factory design pattern is implemented by subclasses MeatProductMenu and ProduceProductMenu by creating their object from interface ProductMenu. Hence factory pattern is implemeted.
 4. Iterator design pattern is implemented by ProductIterator by traversing a container and accessing its elements.
-5. Visitor design pattern 
+5. Visitor design pattern is implemented by VisitTrading method to separate object structure from algorithm.
