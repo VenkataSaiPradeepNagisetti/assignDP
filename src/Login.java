@@ -8,13 +8,14 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Login {
+    int userType;
     public Login() {
     }
 
     public boolean login() {
         Scanner s = new Scanner(System.in);
         System.out.println("Choose the UserType: \n 0: For Buyer \n 1: For Seller");
-        int userType = s.nextInt();
+        userType = s.nextInt();
         s.nextLine();
         File file;
         if (userType == 0) {
@@ -25,7 +26,6 @@ public class Login {
                 System.exit(1);
                 return false;
             }
-
             file = new File("./src/SellerInfo.txt");
         }
 
@@ -34,9 +34,9 @@ public class Login {
         System.out.println("Enter your password:");
         String pswd = s.nextLine();
 
-        BufferedReader br;
+        BufferedReader b;
         try {
-            br = new BufferedReader(new FileReader(file));
+            b = new BufferedReader(new FileReader(file));
         } catch (FileNotFoundException var10) {
             throw new RuntimeException(var10);
         }
@@ -46,7 +46,7 @@ public class Login {
         while(true) {
             String lineString;
             try {
-                if ((lineString = br.readLine()) == null) {
+                if ((lineString = b.readLine()) == null) {
                     break;
                 }
             } catch (IOException var11) {

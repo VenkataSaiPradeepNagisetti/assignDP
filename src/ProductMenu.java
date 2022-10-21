@@ -1,27 +1,13 @@
-public class ProductMenu {
+public abstract interface ProductMenu {
 
-	public void showMenu() {
+	public abstract void showMenu(Facade facade);
 
-	}
+	public abstract void showAddButton();
 
-	public void showAddButton() {
+	public abstract void showViewButton();
 
-	}
+	public abstract void showRadioButton();
 
-	public void showViewButton() {
-
-	}
-
-	public void showRadioButton() {
-
-	}
-
-	public void showLabels() {
-
-	}
-
-	public void showComboxes() {
-
-	}
-
+	public abstract void showLabels();
+	public abstract void showComboxes();
 }
